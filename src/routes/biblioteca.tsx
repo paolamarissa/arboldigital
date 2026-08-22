@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { stories } from "@/lib/stories";
 
 export const Route = createFileRoute("/biblioteca")({
   head: () => ({
@@ -20,22 +21,6 @@ export const Route = createFileRoute("/biblioteca")({
   component: Biblioteca,
 });
 
-const stories = [
-  {
-    title: "La semilla que no quería dormir",
-    minutes: 5,
-    age: "4–6 años",
-    text: "Una semilla curiosa descubre por qué la noche también hace crecer.",
-    tone: "bg-secondary",
-  },
-  {
-    title: "El río de los mil colores",
-    minutes: 7,
-    age: "6–8 años",
-    text: "Dos hermanas siguen un río que cambia de color en cada curva.",
-    tone: "bg-cream",
-  },
-];
 
 function Biblioteca() {
   return (
@@ -78,9 +63,14 @@ function Biblioteca() {
                 </div>
                 <h2 className="mt-4 text-lg font-semibold">{s.title}</h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-                <button className="mt-5 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+                <Link
+                  to="/biblioteca/$slug"
+                  params={{ slug: s.slug }}
+                  className="mt-5 inline-block rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
                   Leer cuento
-                </button>
+                </Link>
+
               </div>
             </article>
           ))}
