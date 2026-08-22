@@ -63,9 +63,14 @@ function Biblioteca() {
                 </div>
                 <h2 className="mt-4 text-lg font-semibold">{s.title}</h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-                <button className="mt-5 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+                <Link
+                  to="/biblioteca/$slug"
+                  params={{ slug: s.slug }}
+                  className="mt-5 inline-block rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
                   Leer cuento
-                </button>
+                </Link>
+
               </div>
             </article>
           ))}
