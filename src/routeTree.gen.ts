@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BibliotecaRouteImport } from './routes/biblioteca'
 import { Route as JuegosRouteImport } from './routes/juegos'
 import { Route as ManualidadesRouteImport } from './routes/manualidades'
+import { Route as BibliotecaSlugRouteImport } from './routes/biblioteca.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,37 +35,52 @@ const ManualidadesRoute = ManualidadesRouteImport.update({
   path: '/manualidades',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BibliotecaSlugRoute = BibliotecaSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BibliotecaRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/biblioteca': typeof BibliotecaRoute
+  '/biblioteca': typeof BibliotecaRouteWithChildren
   '/juegos': typeof JuegosRoute
   '/manualidades': typeof ManualidadesRoute
+  '/biblioteca/$slug': typeof BibliotecaSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/biblioteca': typeof BibliotecaRoute
+  '/biblioteca': typeof BibliotecaRouteWithChildren
   '/juegos': typeof JuegosRoute
   '/manualidades': typeof ManualidadesRoute
+  '/biblioteca/$slug': typeof BibliotecaSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/biblioteca': typeof BibliotecaRoute
+  '/biblioteca': typeof BibliotecaRouteWithChildren
   '/juegos': typeof JuegosRoute
   '/manualidades': typeof ManualidadesRoute
+  '/biblioteca/$slug': typeof BibliotecaSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/biblioteca' | '/juegos' | '/manualidades'
+  fullPaths:
+    '/' | '/biblioteca' | '/juegos' | '/manualidades' | '/biblioteca/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/biblioteca' | '/juegos' | '/manualidades'
-  id: '__root__' | '/' | '/biblioteca' | '/juegos' | '/manualidades'
+  to: '/' | '/biblioteca' | '/juegos' | '/manualidades' | '/biblioteca/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/biblioteca'
+    | '/juegos'
+    | '/manualidades'
+    | '/biblioteca/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BibliotecaRoute: typeof BibliotecaRoute
+  BibliotecaRoute: typeof BibliotecaRouteWithChildren
   JuegosRoute: typeof JuegosRoute
   ManualidadesRoute: typeof ManualidadesRoute
 }
@@ -99,12 +115,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManualidadesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/biblioteca/$slug': {
+      id: '/biblioteca/$slug'
+      path: '/$slug'
+      fullPath: '/biblioteca/$slug'
+      preLoaderRoute: typeof BibliotecaSlugRouteImport
+      parentRoute: typeof BibliotecaRoute
+    }
   }
 }
 
+interface BibliotecaRouteChildren {
+  BibliotecaSlugRoute: typeof BibliotecaSlugRoute
+}
+
+const BibliotecaRouteChildren: BibliotecaRouteChildren = {
+  BibliotecaSlugRoute: BibliotecaSlugRoute,
+}
+
+const BibliotecaRouteWithChildren = BibliotecaRoute._addFileChildren(
+  BibliotecaRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BibliotecaRoute: BibliotecaRoute,
+  BibliotecaRoute: BibliotecaRouteWithChildren,
   JuegosRoute: JuegosRoute,
   ManualidadesRoute: ManualidadesRoute,
 }

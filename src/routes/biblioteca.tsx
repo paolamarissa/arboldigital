@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { stories } from "@/lib/stories";
 
 export const Route = createFileRoute("/biblioteca")({
   head: () => ({
@@ -20,22 +21,6 @@ export const Route = createFileRoute("/biblioteca")({
   component: Biblioteca,
 });
 
-const stories = [
-  {
-    title: "La semilla que no quería dormir",
-    minutes: 5,
-    age: "4–6 años",
-    text: "Una semilla curiosa descubre por qué la noche también hace crecer.",
-    tone: "bg-secondary",
-  },
-  {
-    title: "El río de los mil colores",
-    minutes: 7,
-    age: "6–8 años",
-    text: "Dos hermanas siguen un río que cambia de color en cada curva.",
-    tone: "bg-cream",
-  },
-];
 
 function Biblioteca() {
   return (
