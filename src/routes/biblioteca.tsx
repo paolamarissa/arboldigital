@@ -47,8 +47,9 @@ function Biblioteca() {
         </p>
         <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Biblioteca de Cuentos</h1>
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          Historias breves para leer antes de dormir. Cada cuento indica su duación aproximada y la
-          edad sugerida.
+          Historias breves para leer antes de dormir. Cada cuento indica su duración aproximada y
+          la edad sugerida.
+
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
