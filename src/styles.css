@@ -36,8 +36,13 @@
   --color-earth: var(--earth);
   --color-earth-foreground: var(--earth-foreground);
   --color-cream: var(--cream);
+  --color-play-coral: var(--play-coral);
+  --color-play-teal: var(--play-teal);
+  --color-play-yellow: var(--play-yellow);
+  --color-play-pink: var(--play-pink);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -64,6 +69,11 @@
   --earth: oklch(0.55 0.06 60);
   --earth-foreground: oklch(0.985 0.01 95);
   --cream: oklch(0.965 0.02 92);
+  --play-coral: oklch(0.68 0.16 25);
+  --play-teal: oklch(0.68 0.1 180);
+  --play-yellow: oklch(0.83 0.14 88);
+  --play-pink: oklch(0.74 0.13 350);
+
   --destructive: oklch(0.577 0.18 27.325);
   --destructive-foreground: oklch(0.985 0.01 95);
   --border: oklch(0.905 0.02 95);
@@ -91,4 +101,27 @@
     font-family: var(--font-display);
     letter-spacing: -0.015em;
   }
+}
+
+@keyframes chomp {
+  0% { transform: scale(1) rotate(0); }
+  30% { transform: scale(1.15, 0.85) rotate(-4deg); }
+  60% { transform: scale(0.95, 1.1) rotate(3deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-8px) rotate(-4deg); }
+  40% { transform: translateX(8px) rotate(4deg); }
+  60% { transform: translateX(-6px) rotate(-3deg); }
+  80% { transform: translateX(6px) rotate(3deg); }
+}
+
+@utility animate-chomp {
+  animation: chomp 0.5s ease;
+}
+
+@utility animate-wiggle {
+  animation: wiggle 0.45s ease;
 }
