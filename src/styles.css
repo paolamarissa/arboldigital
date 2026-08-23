@@ -36,8 +36,13 @@
   --color-earth: var(--earth);
   --color-earth-foreground: var(--earth-foreground);
   --color-cream: var(--cream);
+  --color-play-coral: var(--play-coral);
+  --color-play-teal: var(--play-teal);
+  --color-play-yellow: var(--play-yellow);
+  --color-play-pink: var(--play-pink);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
