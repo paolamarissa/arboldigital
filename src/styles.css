@@ -69,6 +69,11 @@
   --earth: oklch(0.55 0.06 60);
   --earth-foreground: oklch(0.985 0.01 95);
   --cream: oklch(0.965 0.02 92);
+  --play-coral: oklch(0.68 0.16 25);
+  --play-teal: oklch(0.68 0.1 180);
+  --play-yellow: oklch(0.83 0.14 88);
+  --play-pink: oklch(0.74 0.13 350);
+
   --destructive: oklch(0.577 0.18 27.325);
   --destructive-foreground: oklch(0.985 0.01 95);
   --border: oklch(0.905 0.02 95);
