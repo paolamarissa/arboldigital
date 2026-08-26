@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { GlupGame } from "@/components/GlupGame";
+import { MultiplicationGame } from "@/components/MultiplicationGame";
 
 export const Route = createFileRoute("/juegos")({
   head: () => ({
