@@ -27,8 +27,8 @@ export const Route = createFileRoute("/juegos")({
 
 const games = [
   { title: "Glup, el monstruo de las palabras", text: "Escucha y dale la palabra correcta.", ready: true },
+  { title: "Misión Multiplicación", text: "Viaja de planeta en planeta resolviendo tablas.", ready: true },
   { title: "Memoria del bosque", text: "Encuentra las parejas de hojas.", ready: false },
-  { title: "Rompecabezas del árbol", text: "Arma la ilustración pieza a pieza.", ready: false },
 ];
 
 function Juegos() {
