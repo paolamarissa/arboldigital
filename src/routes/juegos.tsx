@@ -41,13 +41,22 @@ function Juegos() {
         </p>
         <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Zona de Juegos</h1>
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          Hoy juega con Glup, el monstruo de las palabras: escucha qué palabra quiere comer y
-          dásela. Cada nivel trae palabras un poco más largas.
+          Dos juegos listos: Glup, el monstruo de las palabras, para escuchar y leer; y Misión
+          Multiplicación, para practicar las tablas viajando por el espacio.
         </p>
 
-        <div className="mt-10">
+        <h2 className="mt-12 font-display text-lg font-semibold">
+          Glup, el monstruo de las palabras
+        </h2>
+        <div className="mt-4">
           <GlupGame />
         </div>
+
+        <h2 className="mt-14 font-display text-lg font-semibold">Misión Multiplicación</h2>
+        <div className="mt-4">
+          <MultiplicationGame />
+        </div>
+
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {games.map((g) => (
