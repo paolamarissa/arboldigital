@@ -3,6 +3,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { GlupGame } from "@/components/GlupGame";
 import { MultiplicationGame } from "@/components/MultiplicationGame";
+import { BuhoGame } from "@/components/BuhoGame";
 
 export const Route = createFileRoute("/juegos")({
   head: () => ({
