@@ -29,6 +29,7 @@ export const Route = createFileRoute("/juegos")({
 const games = [
   { title: "Glup, el monstruo de las palabras", text: "Escucha y dale la palabra correcta.", ready: true },
   { title: "Misión Multiplicación", text: "Viaja de planeta en planeta resolviendo tablas.", ready: true },
+  { title: "Leo con Búho", text: "Sonidos, sílabas y palabras con un búho lector.", ready: true },
   { title: "Memoria del bosque", text: "Encuentra las parejas de hojas.", ready: false },
 ];
 
@@ -58,6 +59,10 @@ function Juegos() {
           <MultiplicationGame />
         </div>
 
+        <h2 className="mt-14 font-display text-lg font-semibold">Leo con Búho</h2>
+        <div className="mt-4">
+          <BuhoGame />
+        </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {games.map((g) => (
