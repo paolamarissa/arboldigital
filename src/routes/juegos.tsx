@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { GlupGame } from "@/components/GlupGame";
 import { MultiplicationGame } from "@/components/MultiplicationGame";
 import { BuhoGame } from "@/components/BuhoGame";
+import { MemoryGame } from "@/components/MemoryGame";
 
 export const Route = createFileRoute("/juegos")({
   head: () => ({
@@ -30,7 +31,7 @@ const games = [
   { title: "Glup, el monstruo de las palabras", text: "Escucha y dale la palabra correcta.", ready: true },
   { title: "Misión Multiplicación", text: "Viaja de planeta en planeta resolviendo tablas.", ready: true },
   { title: "Leo con Búho", text: "Sonidos, sílabas y palabras con un búho lector.", ready: true },
-  { title: "Memoria del bosque", text: "Encuentra las parejas de hojas.", ready: false },
+  { title: "Memoria del bosque", text: "Encuentra las 10 parejas del bosque.", ready: true },
 ];
 
 function Juegos() {
@@ -62,6 +63,11 @@ function Juegos() {
         <h2 className="mt-14 font-display text-lg font-semibold">Leo con Búho</h2>
         <div className="mt-4">
           <BuhoGame />
+        </div>
+
+        <h2 className="mt-14 font-display text-lg font-semibold">Memoria del bosque</h2>
+        <div className="mt-4">
+          <MemoryGame />
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
