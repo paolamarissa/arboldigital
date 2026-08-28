@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { BookOpenText, Sprout, Waves, type LucideIcon } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { stories } from "@/lib/stories";
+
+const storyIcons: Record<string, LucideIcon> = {
+  "la-semilla-que-no-queria-dormir": Sprout,
+  "el-rio-de-los-mil-colores": Waves,
+};
 
 export const Route = createFileRoute("/biblioteca")({
   head: () => ({
@@ -38,23 +44,15 @@ function Biblioteca() {
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {stories.map((s) => (
+          {stories.map((s) => {
+            const Icon = storyIcons[s.slug] ?? BookOpenText;
+            return (
             <article
               key={s.title}
               className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
             >
               <div className={`grid h-40 place-items-center ${s.tone}`}>
-                <svg
-                  viewBox="0 0 48 48"
-                  className="h-16 w-16 text-earth/70"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                >
-                  <path d="M24 14c-4-3.5-9-4.5-14-4.5v25c5 0 10 1 14 4.5 4-3.5 9-4.5 14-4.5v-25c-5 0-10 1-14 4.5Z" />
-                  <path d="M24 14v25" />
-                </svg>
+                <Icon className="h-16 w-16 text-earth/70" strokeWidth={1.5} aria-hidden />
               </div>
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-muted-foreground">
