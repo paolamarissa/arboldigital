@@ -40,7 +40,9 @@ function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    const tmp = a[i]!;
+    a[i] = a[j]!;
+    a[j] = tmp;
   }
   return a;
 }
@@ -151,7 +153,7 @@ export function MemoryGame() {
       {/* Cuadrícula 5x4 */}
       <div className="mt-6 grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4">
         {cards.map((card) => {
-          const def = PAIR_DEFS[card.pair];
+          const def = PAIR_DEFS[card.pair]!;
           const Icon = def.icon;
           const visible = card.flipped || card.matched;
           return (
