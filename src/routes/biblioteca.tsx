@@ -71,7 +71,8 @@ function Biblioteca() {
 
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </main>
       <SiteFooter />
