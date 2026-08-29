@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import arbolAsset from "@/assets/arbol-colores.jpeg.asset.json";
+import arbolAsset from "@/assets/arboldigita.png";
 
 const arbol = arbolAsset.url;
 
