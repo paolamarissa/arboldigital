@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import arbol from "@/assets/arbol.png";
+import arbolAsset from "@/assets/arbol-colores.jpeg.asset.json";
+
+const arbol = arbolAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -66,9 +68,9 @@ function Index() {
         <section className="mx-auto max-w-3xl px-6 pt-16 pb-4 text-center">
           <img
             src={arbol}
-            alt="Ilustración de un árbol frondoso de hojas verde salvia"
-            width={1024}
-            height={1024}
+            alt="Ilustración de un árbol colorido con flores, pájaros, un libro, un pincel y una nube con una bombilla"
+            width={1536}
+            height={1920}
             className="mx-auto w-full max-w-md"
           />
           <p className="mt-6 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
